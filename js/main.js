@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ---- Initialize AOS ----
     AOS.init({
-        duration: 800,
+        duration: 500,
         easing: 'ease-out-cubic',
         once: true,
-        offset: 80,
+        offset: 60,
     });
 
     // ---- Navbar Scroll Effect ----
@@ -37,7 +37,18 @@ document.addEventListener('DOMContentLoaded', () => {
         updateActiveLink();
     }
 
-    window.addEventListener('scroll', handleScroll);
+    // Throttled scroll
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                handleScroll();
+                animateStats();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
     handleScroll(); // Run on load
 
     // ---- Back to Top ----
@@ -115,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
             statsAnimated = true;
             statNumbers.forEach(stat => {
                 const target = parseInt(stat.getAttribute('data-target'));
-                const duration = 2000;
+                const duration = 1200;
                 const step = target / (duration / 16);
                 let current = 0;
 
@@ -133,7 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    window.addEventListener('scroll', animateStats);
     animateStats(); // Check on load
 
     // ---- Contact Form Validation & Handle ----
