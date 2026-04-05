@@ -611,6 +611,7 @@ h1, h2, h3, h4, h5, h6 {
 .about__text p {
     margin-bottom: 16px;
     color: var(--gray-600);
+    text-align: justify;
 }
 
 .about__values {
@@ -665,6 +666,35 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.7;
 }
 
+.about__highlight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about__quote {
+    padding: 40px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: var(--radius-md);
+    position: relative;
+    color: var(--white);
+}
+
+.about__quote i {
+    font-size: 2rem;
+    opacity: 0.3;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.about__quote p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
 /* ============================================
    STATS
    ============================================ */
@@ -675,9 +705,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .stats__container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .stats__item {
@@ -907,6 +939,16 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 28px;
 }
 
+.plan-card__from {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray-500);
+    margin-bottom: 4px;
+}
+
 .plan-card__currency {
     font-size: 1.2rem;
     font-weight: 600;
@@ -974,6 +1016,122 @@ h1, h2, h3, h4, h5, h6 {
 
 .plans__note a:hover {
     color: var(--accent-dark);
+}
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testimonials {
+    padding: 100px 0;
+    background: var(--gray-50);
+}
+
+.testimonials__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.testimonials__track {
+    overflow: hidden;
+    flex: 1;
+}
+
+.testimonials__slider {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.4s ease;
+}
+
+.testimonial-card {
+    min-width: calc(33.333% - 16px);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 32px;
+    border: 1px solid var(--gray-200);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.testimonial-card__stars {
+    display: flex;
+    gap: 4px;
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+.testimonial-card__text {
+    font-size: 0.95rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+    font-style: italic;
+    flex: 1;
+}
+
+.testimonial-card__author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid var(--gray-200);
+}
+
+.testimonial-card__avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.testimonial-card__name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.testimonial-card__role {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+}
+
+.testimonials__arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--gray-300);
+    background: var(--white);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.testimonials__arrow:hover {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+.testimonials__arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
 }
 
 /* ============================================
@@ -1308,6 +1466,13 @@ h1, h2, h3, h4, h5, h6 {
     width: 16px;
 }
 
+.footer__note {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-top: 6px;
+    font-style: italic;
+}
+
 .footer__bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 20px 0;
@@ -1440,6 +1605,10 @@ h1, h2, h3, h4, h5, h6 {
         grid-template-columns: 1fr;
     }
 
+    .testimonial-card {
+        min-width: calc(50% - 12px);
+    }
+
     .footer__grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -1519,6 +1688,16 @@ h1, h2, h3, h4, h5, h6 {
 
     .stats__number {
         font-size: 2.3rem;
+    }
+
+    .testimonial-card {
+        min-width: calc(100% - 0px);
+    }
+
+    .testimonials__arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
     }
 }
 

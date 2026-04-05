@@ -46,10 +46,11 @@
         "description": "Empresa especializada en servicios de auditoría, contabilidad y asesoría tributaria en Chile.",
         "url": "https://www.consultoriasintegrales.cl",
         "email": "contacto@consultoriasintegrales.cl",
-        "areaServed": "Chile",
+        "areaServed": ["Región Metropolitana", "Región de Coquimbo"],
         "serviceType": ["Auditoría Financiera", "Contabilidad", "Asesoría Tributaria"],
         "address": {
             "@type": "PostalAddress",
+            "addressRegion": "Región Metropolitana",
             "addressCountry": "CL"
         }
     }
@@ -157,21 +158,11 @@
                     <p>Contamos con un equipo con experiencia en el <strong>sector público y privado</strong>, lo que nos permite abordar cada servicio con una visión integral y adaptada a la realidad de cada cliente.</p>
                     <p>Apoyamos a empresas e instituciones en la mejora de su gestión, generando valor mediante la identificación oportuna de riesgos que puedan impactar sus objetivos estratégicos, financieros, operacionales y tributarios.</p>
                 </div>
-                <div class="about__values" data-aos="fade-left" data-aos-delay="100">
-                    <div class="about__value-card about__value-card--mission">
-                        <div class="about__value-icon">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <h3>Misión</h3>
-                        <p>Acompañar a las empresas en Chile mediante servicios de auditoría, contabilidad y asesoría tributaria, entregando información confiable y oportuna que facilite la toma de decisiones y asegure el cumplimiento ante las Entidades Fiscalizadoras. Nuestro compromiso es aportar al desarrollo, eficiencia y sostenibilidad de cada organización.</p>
-                    </div>
-                    <div class="about__value-card about__value-card--vision">
-                        <div class="about__value-icon">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <h3>Visión</h3>
-                        <p>Impulsar el desarrollo de las empresas en Chile mediante servicios de auditoría, contabilidad y asesoría tributaria, generando soluciones estratégicas y planes de acción efectivos que fortalezcan su gestión financiera y aseguren el cumplimiento ante organismos fiscalizadores y regulatorios.</p>
-                    </div>
+                <div class="about__highlight" data-aos="fade-left" data-aos-delay="100">
+                    <blockquote class="about__quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Acompañamos tu crecimiento con confianza, claridad y visión estratégica.</p>
+                    </blockquote>
                 </div>
             </div>
         </div>
@@ -181,24 +172,14 @@
     <section class="stats">
         <div class="container stats__container">
             <div class="stats__item" data-aos="zoom-in" data-aos-delay="0">
-                <div class="stats__number" data-target="100">0</div>
+                <div class="stats__number" data-target="100">50</div>
                 <span class="stats__suffix">+</span>
                 <p class="stats__label">Clientes Atendidos</p>
             </div>
             <div class="stats__item" data-aos="zoom-in" data-aos-delay="50">
-                <div class="stats__number" data-target="15">0</div>
+                <div class="stats__number" data-target="15">6</div>
                 <span class="stats__suffix">+</span>
                 <p class="stats__label">Años de Experiencia</p>
-            </div>
-            <div class="stats__item" data-aos="zoom-in" data-aos-delay="100">
-                <div class="stats__number" data-target="500">0</div>
-                <span class="stats__suffix">+</span>
-                <p class="stats__label">Declaraciones Realizadas</p>
-            </div>
-            <div class="stats__item" data-aos="zoom-in" data-aos-delay="150">
-                <div class="stats__number" data-target="98">0</div>
-                <span class="stats__suffix">%</span>
-                <p class="stats__label">Satisfacción del Cliente</p>
             </div>
         </div>
     </section>
@@ -277,18 +258,19 @@
                 <!-- Plan Contable Básico -->
                 <div class="plan-card" data-aos="fade-up" data-aos-delay="0">
                     <div class="plan-card__header">
-                        <h3 class="plan-card__name">Plan Contable Básico</h3>
+                        <h3 class="plan-card__name">Plan Básico</h3>
                         <p class="plan-card__desc">Ideal para emprendedores y pequeñas empresas</p>
                     </div>
                     <div class="plan-card__price">
+                        <span class="plan-card__from">Desde</span>
                         <span class="plan-card__currency">$</span>
-                        <span class="plan-card__amount">Consultar</span>
+                        <span class="plan-card__amount">$35.000</span>
                         <span class="plan-card__period">/mes</span>
                     </div>
                     <ul class="plan-card__features">
                         <li><i class="fas fa-check-circle"></i> Declaraciones de Impuestos Mensuales</li>
                         <li><i class="fas fa-check-circle"></i> Reporte Libro de Compras, Ventas y Honorarios</li>
-                        <li><i class="fas fa-check-circle"></i> Consultoría básica por WhatsApp</li>
+                        <li><i class="fas fa-check-circle"></i> Asesoría vía WhatsApp</li>
                         <li><i class="fas fa-check-circle"></i> Soporte por correo electrónico</li>
                     </ul>
                     <a href="#contacto" class="btn btn--outline btn--block">Seleccionar Plan</a>
@@ -302,8 +284,9 @@
                         <p class="plan-card__desc">Para empresas en crecimiento que necesitan más</p>
                     </div>
                     <div class="plan-card__price">
+                        <span class="plan-card__from">Desde</span>
                         <span class="plan-card__currency">$</span>
-                        <span class="plan-card__amount">Consultar</span>
+                        <span class="plan-card__amount">$60.000</span>
                         <span class="plan-card__period">/mes</span>
                     </div>
                     <ul class="plan-card__features">
@@ -312,7 +295,7 @@
                         <li><i class="fas fa-check-circle"></i> Balance General</li>
                         <li><i class="fas fa-check-circle"></i> Libro Mayor</li>
                         <li><i class="fas fa-check-circle"></i> Estado de Resultados</li>
-                        <li><i class="fas fa-check-circle"></i> Asesoría tributaria mensual</li>
+                        <li><i class="fas fa-check-circle"></i> Liquidaciones de sueldo hasta 3 trabajadores</li>
                     </ul>
                     <a href="#contacto" class="btn btn--primary btn--block">Seleccionar Plan</a>
                 </div>
@@ -345,6 +328,96 @@
                 <i class="fas fa-info-circle"></i>
                 ¿Necesita un plan personalizado? <a href="#contacto">Contáctenos</a> y diseñaremos una solución a la medida de su empresa.
             </p>
+        </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section class="testimonials" id="referencias">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-header__tag">Referencias</span>
+                <h2 class="section-header__title">Lo que dicen nuestros clientes</h2>
+                <div class="section-header__line"></div>
+                <p class="section-header__desc">Empresas que han confiado en nosotros comparten su experiencia.</p>
+            </div>
+
+            <div class="testimonials__wrapper" data-aos="fade-up" data-aos-delay="50">
+                <button class="testimonials__arrow testimonials__arrow--prev" aria-label="Anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="testimonials__track">
+                    <div class="testimonials__slider">
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-card__text">"Desde que trabajamos con Consultorías Integrales, nuestra contabilidad está al día y sin errores. Nos dan tranquilidad para enfocarnos en hacer crecer el negocio."</p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar"><i class="fas fa-user"></i></div>
+                                <div>
+                                    <h4 class="testimonial-card__name">María González</h4>
+                                    <p class="testimonial-card__role">Gerente General, Distribuidora MG</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-card__text">"Excelente asesoría tributaria. Nos ayudaron a regularizar nuestra situación ante el SII de forma rápida y profesional. Totalmente recomendados."</p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar"><i class="fas fa-user"></i></div>
+                                <div>
+                                    <h4 class="testimonial-card__name">Carlos Muñoz</h4>
+                                    <p class="testimonial-card__role">Dueño, Servicios Técnicos CM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-card__text">"La auditoría que nos realizaron fue muy completa y nos permitió detectar oportunidades de mejora que no habíamos visto. Muy profesionales."</p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar"><i class="fas fa-user"></i></div>
+                                <div>
+                                    <h4 class="testimonial-card__name">Andrea Rojas</h4>
+                                    <p class="testimonial-card__role">Directora Financiera, Constructora Rojas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="testimonial-card__text">"Llevamos más de 2 años con ellos y la atención siempre ha sido de primer nivel. Responden rápido por WhatsApp y siempre están disponibles."</p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar"><i class="fas fa-user"></i></div>
+                                <div>
+                                    <h4 class="testimonial-card__name">Roberto Pérez</h4>
+                                    <p class="testimonial-card__role">Fundador, RP Consultores</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-card__text">"Nos ayudaron con el inicio de actividades y las primeras declaraciones. Todo impecable. Ideal para quienes están partiendo con su empresa."</p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar"><i class="fas fa-user"></i></div>
+                                <div>
+                                    <h4 class="testimonial-card__name">Valentina Soto</h4>
+                                    <p class="testimonial-card__role">Emprendedora, Tienda VS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="testimonials__arrow testimonials__arrow--next" aria-label="Siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
         </div>
     </section>
 
@@ -466,14 +539,15 @@
                             </div>
                             <div>
                                 <h4>Ubicación</h4>
-                                <p>Santiago, Chile</p>
+                                <p>Santiago, Región Metropolitana</p>
+                                <p>Coquimbo, Región de Coquimbo</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="contact__schedule">
                         <h4><i class="fas fa-clock"></i> Horario de Atención</h4>
-                        <p>Lunes a Viernes: 9:00 - 18:00 hrs</p>
+                        <p>Lunes a Viernes: 8:00 - 18:00 hrs</p>
                         <p>Sábado: 9:00 - 13:00 hrs</p>
                     </div>
                 </div>
@@ -516,7 +590,8 @@
                     <h4>Contacto</h4>
                     <p><i class="fas fa-envelope"></i> contacto@consultoriasintegrales.cl</p>
                     <p><i class="fas fa-phone"></i> +56 9 0000 0000</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Santiago, Chile</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Santiago, Región Metropolitana</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Coquimbo, Región de Coquimbo</p>
                 </div>
             </div>
             <div class="footer__bottom">
