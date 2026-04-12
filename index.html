@@ -8,9 +8,11 @@
     <!-- SEO Meta Tags -->
     <title>Consultorías Integrales | Auditoría, Contabilidad y Asesoría Tributaria en Chile</title>
     <meta name="description" content="Servicios profesionales de auditoría, contabilidad y asesoría tributaria en Chile. Soluciones estratégicas para empresas e instituciones. Contáctenos hoy.">
-    <meta name="keywords" content="auditoría Chile, contabilidad, asesoría tributaria, declaración de impuestos, inicio de actividades, término de giro, liquidaciones de sueldo, SII, consultora contable Chile">
+    <meta name="keywords" content="auditoría Chile, contabilidad Chile, asesoría tributaria, declaración de impuestos, inicio de actividades, término de giro, liquidaciones de sueldo, SII, consultora contable Chile, contador Santiago, contador Coquimbo, servicio contable pyme">
     <meta name="author" content="Consultorías Integrales">
     <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="CL-CO">
+    <meta name="geo.placename" content="Coquimbo, Chile">
     <link rel="canonical" href="https://www.consultoriasintegrales.cl/">
 
     <!-- Open Graph -->
@@ -19,9 +21,17 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.consultoriasintegrales.cl/">
     <meta property="og:locale" content="es_CL">
+    <meta property="og:site_name" content="Consultorías Integrales">
+    <meta property="og:image" content="https://www.consultoriasintegrales.cl/assets/img/logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Consultorías Integrales | Auditoría, Contabilidad y Asesoría Tributaria">
+    <meta name="twitter:description" content="Servicios profesionales de auditoría, contabilidad y asesoría tributaria en Chile.">
+    <meta name="twitter:image" content="https://www.consultoriasintegrales.cl/assets/img/logo.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,13 +56,49 @@
         "description": "Empresa especializada en servicios de auditoría, contabilidad y asesoría tributaria en Chile.",
         "url": "https://www.consultoriasintegrales.cl",
         "email": "contacto@consultoriasintegrales.cl",
-        "areaServed": ["Región Metropolitana", "Región de Coquimbo"],
-        "serviceType": ["Auditoría Financiera", "Contabilidad", "Asesoría Tributaria"],
-        "address": {
-            "@type": "PostalAddress",
-            "addressRegion": "Región Metropolitana",
-            "addressCountry": "CL"
-        }
+        "telephone": "+56922418352",
+        "image": "https://www.consultoriasintegrales.cl/assets/img/logo.png",
+        "priceRange": "$$",
+        "areaServed": [
+            {
+                "@type": "AdministrativeArea",
+                "name": "Región Metropolitana"
+            },
+            {
+                "@type": "AdministrativeArea",
+                "name": "Región de Coquimbo"
+            }
+        ],
+        "serviceType": ["Auditoría Financiera", "Contabilidad", "Asesoría Tributaria", "Declaración de Impuestos", "Inicio de Actividades", "Término de Giro", "Liquidaciones de Sueldo"],
+        "address": [
+            {
+                "@type": "PostalAddress",
+                "addressLocality": "Santiago",
+                "addressRegion": "Región Metropolitana",
+                "addressCountry": "CL"
+            },
+            {
+                "@type": "PostalAddress",
+                "addressLocality": "Coquimbo",
+                "addressRegion": "Región de Coquimbo",
+                "addressCountry": "CL"
+            }
+        ],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "09:00",
+                "closes": "13:00"
+            }
+        ],
+        "sameAs": []
     }
     </script>
 </head>
@@ -62,7 +108,7 @@
     <nav class="navbar" id="navbar">
         <div class="container navbar__container">
             <a href="#inicio" class="navbar__logo">
-                <img src="assets/img/logo-2.png" alt="Consultorías Integrales" class="navbar__logo-img">
+                <img src="assets/img/logo.png" alt="Consultorías Integrales" class="navbar__logo-img">
             </a>
             <ul class="navbar__menu" id="navMenu">
                 <li><a href="#inicio" class="navbar__link active">Inicio</a></li>
@@ -539,7 +585,7 @@
             <div class="footer__grid">
                 <div class="footer__brand">
                     <a href="#inicio" class="footer__logo">
-                        <img src="assets/img/logo-2.png" alt="Consultorías Integrales" class="footer__logo-img">
+                        <img src="assets/img/logo.png" alt="Consultorías Integrales" class="footer__logo-img">
                     </a>
                     <p>Servicios profesionales de auditoría, contabilidad y asesoría tributaria orientados a fortalecer la gestión de su empresa en Chile.</p>
                 </div>
