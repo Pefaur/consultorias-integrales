@@ -16,6 +16,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     const backToTop = document.getElementById('backToTop');
 
+    // ---- Active Navigation Link ----
+    const sections = document.querySelectorAll('section[id], header[id]');
+    const navLinks = document.querySelectorAll('.navbar__link');
+
+    function updateActiveLink() {
+        const scrollY = window.scrollY + 120;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+
     function handleScroll() {
         const scrollY = window.scrollY;
 
@@ -86,29 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ---- Active Navigation Link ----
-    const sections = document.querySelectorAll('section[id], header[id]');
-    const navLinks = document.querySelectorAll('.navbar__link');
-
-    function updateActiveLink() {
-        const scrollY = window.scrollY + 120;
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-
-            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
-    }
-
     // ---- Stats Counter Animation ----
     const statNumbers = document.querySelectorAll('.stats__number');
     let statsAnimated = false;
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const nombre = document.getElementById('nombre');
             const email = document.getElementById('email');
             const telefono = document.getElementById('telefono');
-            const mensaje = document.getElementById('mensaje');
+            const servicio = document.getElementById('servicio');
 
             if (!nombre.value.trim()) {
                 showError(nombre, 'nombreError', 'Ingrese su nombre');
@@ -181,11 +181,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!telefono.value.trim()) {
                 showError(telefono, 'telefonoError', 'Ingrese su teléfono');
-                isValid = false;
-            }
-
-            if (!mensaje.value.trim()) {
-                showError(mensaje, 'mensajeError', 'Ingrese su mensaje');
                 isValid = false;
             }
 
@@ -238,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Real-time validation on blur
-        ['nombre', 'email', 'telefono', 'mensaje'].forEach(id => {
+        ['nombre', 'email', 'telefono'].forEach(id => {
             const el = document.getElementById(id);
             if (el) {
                 el.addEventListener('blur', () => {
@@ -260,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function clearErrors() {
         document.querySelectorAll('.contact-form__error').forEach(el => el.textContent = '');
-        document.querySelectorAll('.contact-form__group input, .contact-form__group textarea')
+        document.querySelectorAll('.contact-form__group input, .contact-form__group textarea, .contact-form__group select')
             .forEach(el => el.classList.remove('error'));
     }
 
