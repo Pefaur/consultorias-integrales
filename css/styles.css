@@ -1239,58 +1239,105 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 18px;
 }
 
-.contact-form__success {
+/* Form Modal */
+.form-modal {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-modal.show {
+    display: flex;
+    animation: modalFadeIn 0.3s ease;
+}
+
+.form-modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.form-modal__content {
+    position: relative;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 48px 40px 36px;
+    max-width: 440px;
+    width: 90%;
     text-align: center;
-    padding: 28px;
-    margin-top: 20px;
-    background: rgba(40, 167, 69, 0.08);
-    border: 1px solid rgba(40, 167, 69, 0.2);
-    border-radius: var(--radius-md);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    animation: modalSlideUp 0.3s ease;
 }
 
-.contact-form__success.show {
-    display: block;
-    animation: fadeIn 0.5s ease;
+.form-modal__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: var(--gray-500);
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.2s;
 }
 
-.contact-form__success i {
-    font-size: 2.5rem;
-    color: var(--success);
-    margin-bottom: 12px;
-}
-
-.contact-form__success p {
-    font-size: 1rem;
-    font-weight: 500;
+.form-modal__close:hover {
     color: var(--secondary);
 }
 
-.contact-form__error-msg {
-    display: none;
-    text-align: center;
-    padding: 28px;
-    margin-top: 20px;
-    background: rgba(220, 53, 69, 0.08);
-    border: 1px solid rgba(220, 53, 69, 0.2);
-    border-radius: var(--radius-md);
+.form-modal__icon {
+    margin-bottom: 16px;
 }
 
-.contact-form__error-msg.show {
-    display: block;
-    animation: fadeIn 0.5s ease;
+.form-modal__icon i {
+    font-size: 3.5rem;
 }
 
-.contact-form__error-msg i {
-    font-size: 2.5rem;
+.form-modal--success .form-modal__icon i {
+    color: #28a745;
+}
+
+.form-modal--error .form-modal__icon i {
     color: #dc3545;
+}
+
+.form-modal__title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--secondary);
     margin-bottom: 12px;
 }
 
-.contact-form__error-msg p {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--secondary);
+.form-modal__text {
+    font-size: 0.95rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.form-modal .btn {
+    min-width: 160px;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modalSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {

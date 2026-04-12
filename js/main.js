@@ -149,7 +149,39 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---- Contact Form Validation & Handle ----
     const contactForm = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
-    const formSuccess = document.getElementById('formSuccess');
+
+    // Modal helpers
+    function showModal(type, title, text) {
+        const modal = document.getElementById('formModal');
+        const icon = document.getElementById('formModalIcon');
+        const modalTitle = document.getElementById('formModalTitle');
+        const modalText = document.getElementById('formModalText');
+        const content = document.getElementById('formModalContent');
+
+        content.className = 'form-modal__content form-modal--' + type;
+
+        if (type === 'success') {
+            icon.innerHTML = '<i class="fas fa-check-circle"></i>';
+        } else {
+            icon.innerHTML = '<i class="fas fa-exclamation-circle"></i>';
+        }
+
+        modalTitle.textContent = title;
+        modalText.textContent = text;
+        modal.classList.add('show');
+    }
+
+    function closeModal() {
+        document.getElementById('formModal').classList.remove('show');
+    }
+
+    // Modal close events
+    const modalClose = document.getElementById('formModalClose');
+    const modalOverlay = document.getElementById('formModalOverlay');
+    const modalBtn = document.getElementById('formModalBtn');
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+    if (modalBtn) modalBtn.addEventListener('click', closeModal);
 
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -164,7 +196,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const nombre = document.getElementById('nombre');
             const email = document.getElementById('email');
             const telefono = document.getElementById('telefono');
-            const servicio = document.getElementById('servicio');
 
             if (!nombre.value.trim()) {
                 showError(nombre, 'nombreError', 'Ingrese su nombre');
@@ -185,9 +216,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (isValid) {
-                const formError = document.getElementById('formError');
-                formError.classList.remove('show');
-
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
 
@@ -200,18 +228,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        contactForm.style.display = 'none';
-                        formSuccess.classList.add('show');
+                        showModal('success',
+                            '¡Mensaje enviado!',
+                            'Hemos recibido su consulta. Nos pondremos en contacto con usted a la brevedad.'
+                        );
+                        contactForm.reset();
                     } else {
-                        formError.querySelector('p').textContent =
-                            'Hubo un error al enviar el mensaje. Por favor intente nuevamente o contáctenos por WhatsApp al +56 9 2241 8352.';
-                        formError.classList.add('show');
+                        showModal('error',
+                            'Error al enviar',
+                            'No se pudo enviar el mensaje. Por favor intente nuevamente o contáctenos por WhatsApp al +56 9 2241 8352.'
+                        );
                     }
                 })
                 .catch(() => {
-                    formError.querySelector('p').textContent =
-                        'Error de conexión. Verifique su internet e intente nuevamente, o contáctenos por WhatsApp al +56 9 2241 8352.';
-                    formError.classList.add('show');
+                    showModal('error',
+                        'Error de conexión',
+                        'No se pudo conectar con el servidor. Verifique su conexión a internet o contáctenos por WhatsApp al +56 9 2241 8352.'
+                    );
                 })
                 .finally(() => {
                     submitBtn.disabled = false;
