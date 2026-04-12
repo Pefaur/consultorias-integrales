@@ -190,13 +190,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (isValid) {
+                // ---- FORMSPREE: Reemplazar con tu ID real ----
+                const FORMSPREE_ID = 'TU_FORM_ID';
+                // -----------------------------------------------
+
+                const formError = document.getElementById('formError');
+                formError.classList.remove('show');
+
+                // Validar que el ID esté configurado
+                if (!FORMSPREE_ID || FORMSPREE_ID === 'TU_FORM_ID') {
+                    formError.querySelector('p').textContent =
+                        'El formulario aún no está configurado. Por favor contáctenos por WhatsApp al +56 9 2241 8352.';
+                    formError.classList.add('show');
+                    return;
+                }
+
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
 
-                // Enviar formulario vía Formspree
                 const formData = new FormData(contactForm);
 
-                fetch('https://formspree.io/f/TU_FORM_ID', {
+                fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
                     method: 'POST',
                     body: formData,
                     headers: { 'Accept': 'application/json' }
@@ -206,11 +220,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         contactForm.style.display = 'none';
                         formSuccess.classList.add('show');
                     } else {
-                        alert('Hubo un error al enviar el mensaje. Intente nuevamente.');
+                        formError.querySelector('p').textContent =
+                            'Hubo un error al enviar el mensaje. Por favor intente nuevamente o contáctenos por WhatsApp al +56 9 2241 8352.';
+                        formError.classList.add('show');
                     }
                 })
                 .catch(() => {
-                    alert('Error de conexión. Intente nuevamente.');
+                    formError.querySelector('p').textContent =
+                        'Error de conexión. Verifique su internet e intente nuevamente, o contáctenos por WhatsApp al +56 9 2241 8352.';
+                    formError.classList.add('show');
                 })
                 .finally(() => {
                     submitBtn.disabled = false;

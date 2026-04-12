@@ -268,27 +268,12 @@ h1, h2, h3, h4, h5, h6 {
 .navbar__logo {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 1.25rem;
-    color: var(--primary-dark);
-    font-weight: 400;
     z-index: 1001;
 }
 
-.navbar__logo strong {
-    font-weight: 700;
-}
-
-.navbar__logo-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
-    color: var(--white);
-    border-radius: var(--radius-sm);
-    font-size: 1.1rem;
+.navbar__logo-img {
+    height: 50px;
+    width: auto;
 }
 
 .navbar__menu {
@@ -364,7 +349,7 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: url('../assets/img/bg.jpg') center center / cover no-repeat fixed;
+    background: url('../assets/img/bg2.png') center center / cover no-repeat fixed;
     overflow: hidden;
     padding-top: 76px;
 }
@@ -1282,6 +1267,33 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--secondary);
 }
 
+.contact-form__error-msg {
+    display: none;
+    text-align: center;
+    padding: 28px;
+    margin-top: 20px;
+    background: rgba(220, 53, 69, 0.08);
+    border: 1px solid rgba(220, 53, 69, 0.2);
+    border-radius: var(--radius-md);
+}
+
+.contact-form__error-msg.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.contact-form__error-msg i {
+    font-size: 2.5rem;
+    color: #dc3545;
+    margin-bottom: 12px;
+}
+
+.contact-form__error-msg p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--secondary);
+}
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -1385,25 +1397,13 @@ h1, h2, h3, h4, h5, h6 {
 .footer__logo {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 1.15rem;
-    color: var(--white);
     margin-bottom: 16px;
 }
 
-.footer__logo strong {
-    font-weight: 700;
-}
-
-.footer__logo-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: var(--radius-sm);
-    font-size: 1rem;
+.footer__logo-img {
+    height: 45px;
+    width: auto;
+    filter: brightness(0) invert(1);
 }
 
 .footer__brand p {
