@@ -185,33 +185,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (isValid) {
-                // ---- FORMSPREE: Reemplazar con tu ID real ----
-                const FORMSPREE_ID = 'TU_FORM_ID';
-                // -----------------------------------------------
-
                 const formError = document.getElementById('formError');
                 formError.classList.remove('show');
-
-                // Validar que el ID esté configurado
-                if (!FORMSPREE_ID || FORMSPREE_ID === 'TU_FORM_ID') {
-                    formError.querySelector('p').textContent =
-                        'El formulario aún no está configurado. Por favor contáctenos por WhatsApp al +56 9 2241 8352.';
-                    formError.classList.add('show');
-                    return;
-                }
 
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
 
                 const formData = new FormData(contactForm);
 
-                fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
+                    body: formData
                 })
-                .then(response => {
-                    if (response.ok) {
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
                         contactForm.style.display = 'none';
                         formSuccess.classList.add('show');
                     } else {
