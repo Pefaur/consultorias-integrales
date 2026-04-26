@@ -1,0 +1,15 @@
+# robots.txt para https://www.consultoriasintegrales.cl/
+# Permitir indexación a todos los buscadores
+
+User-agent: *
+Allow: /
+Disallow: /assets/img/logo-old.png
+
+# Bots de IA y scraping agresivo: opcional bloquear si no se desea entrenamiento
+# User-agent: GPTBot
+# Disallow: /
+# User-agent: CCBot
+# Disallow: /
+
+# Sitemap
+Sitemap: https://www.consultoriasintegrales.cl/sitemap.xml

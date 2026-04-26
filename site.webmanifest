@@ -1,0 +1,25 @@
+{
+    "name": "Consultorías Integrales",
+    "short_name": "Consultorías",
+    "description": "Auditoría, contabilidad y asesoría tributaria en Chile.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#0a2540",
+    "lang": "es-CL",
+    "icons": [
+        {
+            "src": "/assets/img/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/assets/img/logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ]
+}
